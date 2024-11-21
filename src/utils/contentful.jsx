@@ -1,18 +1,18 @@
-import { createClient } from 'contentful';
+import { createClient } from "contentful";
 
 const client = createClient({
-  space: 'qytsmdo3strr',
-  accessToken: 'MR6w5FacslSt86DOv2rJnfuDaOyTD92_ZyUSKKIMSes',
+  space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+  accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN,
 });
 
 export const getBlogPosts = async () => {
   try {
     const response = await client.getEntries({
-      content_type: 'blogPost',
-      order: '-sys.createdAt',
+      content_type: "blogPost",
+      order: "-sys.createdAt",
     });
-    
-    return response.items.map(item => ({
+
+    return response.items.map((item) => ({
       id: item.sys.id,
       title: item.fields.title,
       slug: item.fields.slug,
@@ -23,7 +23,7 @@ export const getBlogPosts = async () => {
       featuredImage: item.fields.featuredImage?.fields?.file?.url,
     }));
   } catch (error) {
-    console.error('Error fetching blog posts:', error);
+    console.error("Error fetching blog posts:", error);
     return [];
   }
 };
@@ -31,11 +31,11 @@ export const getBlogPosts = async () => {
 export const getBlogPost = async (slug) => {
   try {
     const response = await client.getEntries({
-      content_type: 'blogPost',
-      'fields.slug': slug,
+      content_type: "blogPost",
+      "fields.slug": slug,
       limit: 1,
     });
-    
+
     if (response.items.length === 0) {
       return null;
     }
@@ -50,7 +50,7 @@ export const getBlogPost = async (slug) => {
       featuredImage: post.fields.featuredImage?.fields?.file?.url,
     };
   } catch (error) {
-    console.error('Error fetching blog post:', error);
+    console.error("Error fetching blog post:", error);
     return null;
   }
 };
