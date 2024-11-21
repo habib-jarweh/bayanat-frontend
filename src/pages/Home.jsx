@@ -51,7 +51,6 @@ const FEATURED_POSTS = [
 
 const Home = () => {
   const [currentTagIndex, setCurrentTagIndex] = useState(0);
-  const [currentPostIndex, setCurrentPostIndex] = useState(0);
   const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
