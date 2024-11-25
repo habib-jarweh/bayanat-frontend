@@ -1,14 +1,21 @@
-// src/pages/Home.jsx
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Newspaper, Trophy, LineChart, ClipboardList } from "lucide-react";
+import {
+  Newspaper,
+  Trophy,
+  LineChart,
+  ClipboardList,
+  Users,
+  Building2,
+  Globe2,
+} from "lucide-react";
 
 const ROTATING_TAGS = [
-  "News & Updates",
-  "Success Stories",
-  "Funding Insights",
-  "Case Studies",
+  "Funding Roundup",
+  "SaaS in Action",
+  "Industry Pulse",
+  "Behind the Curtain",
 ];
 
 const FEATURED_POSTS = [
@@ -93,13 +100,15 @@ const Home = () => {
           >
             <div>
               <h1 className="text-5xl font-bold mb-6">
-                <span className="text-gray-900">Your Main </span>
-                <span className="text-blue-500">Tagline </span>
-                <span className="text-[#00E6CA]">Here</span>
+                <span className="text-gray-900"></span>
+                <span className="text-blue-500">
+                  The Heartbeat of SaaS Information{" "}
+                </span>
+                <span className="text-[#00E6CA]">in MENA</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                compelling subtagline that explains your value proposition jkfy
-                bk yufuiyf iuyt yity kh
+                Explore the People, Ideas, and Innovations Driving Growth in the
+                Region
               </p>
             </div>
 
@@ -267,23 +276,144 @@ const Home = () => {
             <h2 className="text-3xl font-bold mb-8 text-blue-500">
               Who We Are
             </h2>
-            <p className="max-w-3xl mx-auto text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              lacinia odio vitae vestibulum. Curabitur nec nunc ut sapien
-              malesuada tincidunt. Sed a nulla at lorem auctor bibendum. Etiam
-              venenatis leo nec sem blandit, a pharetra purus aliquam. Donec nec
-              massa nunc. Quisque varius nisl ut est posuere, ut scelerisque
-              turpis tincidunt. Phasellus quis dui ut libero convallis
+            <p className="max-w-3xl mx-auto text-gray-600 mb-16">
+              We're a team of entrepreneurs from the MENA region united by our
+              passion for tech, startups, and innovation. With deep roots in the
+              local ecosystem, we're on a mission to bridge the knowledge gap in
+              SaaS, sparking collaboration and opportunities.
             </p>
+
+            {/* Mission Points */}
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative"
+              >
+                <div className="space-y-4">
+                  <div className="h-0.5 w-24 bg-gradient-to-r from-blue-500 to-[#00E6CA] mx-auto mb-6"></div>
+                  <h3 className="text-xl font-bold text-gray-900">Empower</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Empower curiosity with trusted insights and engaging
+                    stories.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative"
+              >
+                <div className="space-y-4">
+                  <div className="h-0.5 w-24 bg-gradient-to-r from-blue-500 to-[#00E6CA] mx-auto mb-6"></div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Illuminate
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Illuminate the SaaS landscape by showcasing founders,
+                    investors, and users.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative"
+              >
+                <div className="space-y-4">
+                  <div className="h-0.5 w-24 bg-gradient-to-r from-blue-500 to-[#00E6CA] mx-auto mb-6"></div>
+                  <h3 className="text-xl font-bold text-gray-900">Inspire</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Inspire innovation by highlighting what's driving MENA's
+                    growth in tech.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Mission Points - Vertical Layout */}
+            <div className="max-w-3xl mx-auto space-y-12">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center gap-8 text-left"
+              >
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-[#00E6CA] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">01</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 bg-gradient-to-r from-blue-500 to-[#00E6CA] bg-clip-text text-transparent">
+                    Empower Curiosity
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    With trusted insights and engaging stories that bring the
+                    MENA SaaS ecosystem to life.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex items-center gap-8 text-left md:ml-12"
+              >
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-[#00E6CA] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">02</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 bg-gradient-to-r from-blue-500 to-[#00E6CA] bg-clip-text text-transparent">
+                    Illuminate the Landscape
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    By showcasing the stories of founders, investors, and users
+                    shaping the future.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex items-center gap-8 text-left md:ml-24"
+              >
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-[#00E6CA] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">03</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 bg-gradient-to-r from-blue-500 to-[#00E6CA] bg-clip-text text-transparent">
+                    Inspire Innovation
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    By highlighting the drivers behind MENA's exponential growth
+                    in tech.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
           </div>
 
           {/* What We Do */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-12 text-center text-[#00E6CA]">
+          <div className="relative pt-20">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+            <h2 className="text-3xl font-bold mb-8 text-center text-[#00E6CA]">
               What We Do
             </h2>
+            <p className="max-w-3xl mx-auto text-gray-600 text-center mb-12">
+              We source insights straight from the market by connecting with
+              founders, investors, and business leaders. Our platform delivers
+              the stories and trends shaping the MENA region’s SaaS landscape,
+              keeping you informed and inspired.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {/* News & Updates */}
+              {/* Funding Roundup */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -296,15 +426,16 @@ const Home = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                  News & Updates
+                  Funding Roundup
                 </h3>
                 <p className="text-gray-600">
-                  Stay informed with the latest industry developments, market
-                  trends, and breaking news in real-time.
+                  Stay up to date with a weekly recap of funding news from SaaS
+                  startups across MENA. Discover who’s raising, what’s scaling,
+                  and where the capital is flowing.
                 </p>
               </motion.div>
 
-              {/* Success Stories */}
+              {/* SaaS in Action*/}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -317,15 +448,16 @@ const Home = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                  Success Stories
+                  SaaS in Action
                 </h3>
                 <p className="text-gray-600">
-                  Discover inspiring journeys of companies and entrepreneurs
-                  who've achieved remarkable milestones.
+                  Dive into real-world case studies. Explore how businesses in
+                  the MENA region are leveraging SaaS to streamline operations,
+                  drive growth, and solve unique challenges.
                 </p>
               </motion.div>
 
-              {/* Funding Insights */}
+              {/* Industry Pulse */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -338,15 +470,15 @@ const Home = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                  Funding Insights
+                  Industry Pulse
                 </h3>
                 <p className="text-gray-600">
-                  Expert analysis of funding trends, investment opportunities,
-                  and financial strategies for growth.
+                  Unpack market trends and industry shifts, showcasing how SaaS
+                  is shaping the future of business in MENA.
                 </p>
               </motion.div>
 
-              {/* Case Studies */}
+              {/* Behind the Curtain */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -359,29 +491,15 @@ const Home = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                  Case Studies
+                  Behind the Curtain
                 </h3>
                 <p className="text-gray-600">
-                  In-depth analysis of successful strategies, methodologies, and
-                  best practices in the industry.
+                  Learn from the trenches. Honest, raw, and insightful founder
+                  stories sharing their journeys through wins, missteps, and
+                  lessons learned while building impactful SaaS businesses.
                 </p>
               </motion.div>
             </div>
-          </div>
-
-          {/* Why We Do It */}
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-8 text-blue-500">
-              Why We Do It
-            </h2>
-            <p className="max-w-3xl mx-auto text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              lacinia odio vitae vestibulum. Curabitur nec nunc ut sapien
-              malesuada tincidunt. Sed a nulla at lorem auctor bibendum. Etiam
-              venenatis leo nec sem blandit, a pharetra purus aliquam. Donec nec
-              massa nunc. Quisque varius nisl ut est posuere, ut scelerisque
-              turpis tincidunt. Phasellus quis dui ut libero convallis
-            </p>
           </div>
         </div>
       </div>
@@ -390,9 +508,13 @@ const Home = () => {
       <div className="bg-gradient-to-r from-blue-600 to-[#00E6CA] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center">
-            <h2 className="text-4xl font-bold text-white mb-6">Stay Updated</h2>
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Stay Ahead of the Curve.
+            </h2>
             <p className="text-white text-xl mb-8 text-center">
-              Join our newsletter and never miss our latest content
+              Join our growing community of SaaS enthusiasts, and never miss a
+              story, insight, or funding update from MENA’s booming tech
+              industry.
             </p>
             <div className="flex gap-4 w-full max-w-lg">
               <input
