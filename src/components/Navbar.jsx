@@ -25,9 +25,6 @@ const Navbar = () => {
             <Link to="/blog" className="text-gray-600 hover:text-gray-900">
               Blog
             </Link>
-            <Link to="/mission" className="text-gray-600 hover:text-gray-900">
-              Mission
-            </Link>
             <SubscribeButton variant="navbar" />
           </div>
 

@@ -1,5 +1,5 @@
 // src/components/Footer.jsx
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,7 +12,8 @@ const Footer = () => {
               Bayanat
             </Link>
             <p className="mt-4 text-gray-600">
-              mission statement or brief description goes here. Make it memorable and impactful.
+              mission statement or brief description goes here. Make it
+              memorable and impactful.
             </p>
           </div>
 
@@ -23,12 +24,10 @@ const Footer = () => {
             </h3>
             <ul className="mt-4 space-y-4">
               <li>
-                <Link to="/mission" className="text-base text-gray-600 hover:text-gray-900">
-                  Our Mission
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-base text-gray-600 hover:text-gray-900">
+                <Link
+                  to="/blog"
+                  className="text-base text-gray-600 hover:text-gray-900"
+                >
                   Blog
                 </Link>
               </li>
@@ -42,7 +41,10 @@ const Footer = () => {
             </h3>
             <ul className="mt-4 space-y-4">
               <li>
-                <a href="mailto:contact@yourstartup.com" className="text-base text-gray-600 hover:text-gray-900">
+                <a
+                  href="mailto:contact@yourstartup.com"
+                  className="text-base text-gray-600 hover:text-gray-900"
+                >
                   contact@yourstartup.com
                 </a>
               </li>
